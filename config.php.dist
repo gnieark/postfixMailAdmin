@@ -1,0 +1,28 @@
+<?php
+
+//*************** CONNEXION ********************
+define('DB_SGB','mysql');		//mysql psgsql mariadb 
+define('DB_NAME', 'postfix');		// Postfix database name
+define('DB_USER', 'postfixadmin');	// user
+define('DB_PASS', '*******');		
+define('DB_HOST', 'localhost');
+define('DB_PORT', ''); 			//empty if default port
+
+//**************  Queries ************************
+/*
+* "\L" will be replaced by the user's login
+* "\P" will be replaced by the user's password
+* "\D domain/
+*/
+
+
+
+//SELECT admins
+define('QUERY_SELECT_ADMINS','SELECT username, created,modified,active,superadmin FROM admin;');
+//SELECT DOMAIN admin
+define('QUERY_SELECT_DOMAIN_ADMINS',
+  'SELECT admin.username, admin.created,admin.modified,admin.active,admin.superadmin 
+    FROM admin, domain_admins
+    WHERE admin.username=domain_admins.username
+    AND domain='\D';');
+    
