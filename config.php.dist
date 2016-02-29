@@ -1,5 +1,8 @@
 <?php
 
+define('SITE_TITLE','PostfixMailAdmin');
+
+
 //*************** CONNEXION ********************
 define('DB_SGB','mysql');		//mysql psgsql mariadb 
 define('DB_NAME', 'postfix');		// Postfix database name

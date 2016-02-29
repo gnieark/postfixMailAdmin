@@ -1,10 +1,12 @@
 <?php
 require_once('../functions.php');
 if(!file_exists('../config.php')){
-        include('../tpl/notConfigured.htm');
-        die;
+  include('../tpl/notConfigured.htm');
+  die;
+}else{
+  include ('../config.php');
 }
 if(!isset($_SESSION['isConnected'])){
-        login_page();
+        echo login_page();
         die;
 }
