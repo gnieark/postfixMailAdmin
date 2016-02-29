@@ -13,7 +13,7 @@ function connect($user,$password){
 	  );
   echo $query;
   $results= $db -> Execute($query);
-  if(!$results){
+  if(! $results -> fields[0]){
     unset($_SESSION['isConnected']);
    
     return false;
