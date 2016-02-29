@@ -1,0 +1,10 @@
+<?php
+require_once('../functions.php');
+if(!file_exists('../config.php')){
+        include('../tpl/notConfigured.htm');
+        die;
+}
+if(!isset($_SESSION['isConnected'])){
+        login_page();
+        die;
+}
