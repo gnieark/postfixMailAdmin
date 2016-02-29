@@ -31,4 +31,4 @@ define('QUERY_SELECT_DOMAIN_ADMINS',
     AND domain=\'\\D\';');
     
 //Authentificate admin
-define('QUERY_AUTHENTIFICATE_ADMIN', 'SELECT username FROM admin WHERE password=MD5(\'\\P\') AND username=\'\\L\' AND ACTIVE=\'1\'');
+define('QUERY_AUTHENTIFICATE_ADMIN', 'SELECT username FROM admin WHERE password=MD5(\\P) AND username=\\L AND ACTIVE=\'1\'');
