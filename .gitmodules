@@ -1,0 +1,3 @@
+[submodule "ADOdb"]
+	path = ADOdb
+	url = git@github.com:ADOdb/ADOdb.git
