@@ -37,6 +37,7 @@ switch($menu){
   default:
     break;
 }
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
