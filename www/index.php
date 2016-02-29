@@ -6,6 +6,15 @@ if(!file_exists('../config.php')){
 }else{
   include ('../config.php');
 }
+//connexion Database
+include('../ADOdb/adodb.inc.php');
+$db = ADONewConnection(DB_DRIVER); 
+$db->Connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+if(!$db){
+  include('../tpl/dbError.htm');
+  die();
+}
+
 if((isset($_POST['act'])) && ($_POST['act']=="connect")){
   //the only thing we can do without being connected is to try to connect
   connect();
