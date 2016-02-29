@@ -1,6 +1,8 @@
 <?php
 session_start();
-
+if(isset($_GET['unconnect'])){
+  unset($_SESSION);
+}
 require_once('../functions.php');
 if(!file_exists('../config.php')){
   include('../tpl/notConfigured.htm');
@@ -31,7 +33,20 @@ else
   $menu="";
 
 switch($menu){
-  case "session":
+  case "admins":
+  
+    break;
+  case "domains":
+    break;
+    
+  case "users":
+  
+    break;
+    
+  case "aliases":
+  
+    break;
+  case "security":
   
     break;
   default:
@@ -53,6 +68,7 @@ switch($menu){
     <a href="index.php?menu=users">Utilisateurs</a>
     <a href="index.php?menu=aliases">Alias</a>
     <a href="index.php?menu=security">Sécurité</a>
+    <a href="index.php?unconnect=1">Se déconnecter</a>
     </p>
   </nav>
 </body>
