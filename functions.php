@@ -11,7 +11,6 @@ function connect($user,$password){
 	    array($db -> qstr($password),$db -> qstr($user)),
 	    QUERY_AUTHENTIFICATE_ADMIN
 	  );
-  echo $query;
   $results= $db -> Execute($query);
   if(! $results -> fields[0]){
     unset($_SESSION['isConnected']);
