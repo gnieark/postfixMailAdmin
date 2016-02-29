@@ -17,12 +17,13 @@
 <body>
 <div class="container">
   <h1 class="pcenter">{{title}}</h1>
-  <form id="auth" method="post" action="index.php?menu=session&amp;act=connect">
+  <form id="auth" method="post" action="index.php">
+	  <input type="hidden" name="act" value="connect"/>
 	  <p><img src="img/34416.png" alt="logo provisoire"/></p>
 	  <p>Identifiez vous:</p>
 	  <p><input type="text" name="userid" placeholder="your name"/></p>
-	  <p><input name="connect_pwd" placeholder="your password" type="password"/></p>
-	  <p><input name="connect_submit" value="Se connecter" type="submit"/></p>
+	  <p><input name="pwd" placeholder="your password" type="password"/></p>
+	  <p><input value="Se connecter" type="submit"/></p>
   </form>
 </div>
 </body>

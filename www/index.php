@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once('../functions.php');
 if(!file_exists('../config.php')){
   include('../tpl/notConfigured.htm');
@@ -17,13 +19,13 @@ if(!$db){
 
 if((isset($_POST['act'])) && ($_POST['act']=="connect")){
   //the only thing we can do without being connected is to try to connect
-  connect();
+  connect($_POST['userid'],$_POST['pwd']);
 }
 if(!isset($_SESSION['isConnected'])){
         echo login_page();
         die;
 }
-
+echo "plop";
 if(isset($_GET['menu']))
   $menu=$_GET['menu'];
 else

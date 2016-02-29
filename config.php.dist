@@ -22,10 +22,13 @@ define('DB_PORT', ''); 			//empty if default port
 
 //SELECT admins
 define('QUERY_SELECT_ADMINS','SELECT username, created,modified,active,superadmin FROM admin;');
-//SELECT DOMAIN admin
+
+//SELECT DOMAIN admins
 define('QUERY_SELECT_DOMAIN_ADMINS',
   'SELECT admin.username, admin.created,admin.modified,admin.active,admin.superadmin 
     FROM admin, domain_admins
     WHERE admin.username=domain_admins.username
     AND domain=\'\\D\';');
     
+//Authentificate admin
+define('QUERY_AUTHENTIFICATE_ADMIN', 'SELECT username FROM admin WHERE password=MD5(\'\\P\') AND username=\'\\L\' AND ACTIVE=\'1\'');
