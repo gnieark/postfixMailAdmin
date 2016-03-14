@@ -34,9 +34,12 @@ else
 
 switch($menu){
   case "admins":
-  
+    include "../inc/admins.php";
     break;
   case "domains":
+  
+  
+  
     break;
     
   case "users":
@@ -50,6 +53,7 @@ switch($menu){
   
     break;
   default:
+    $content="";
     break;
 }
 ?>
@@ -58,11 +62,13 @@ switch($menu){
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="author" content="Gnieark"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="theme.css">
 <title>PostfixMailAdmin</title>
 </head>
 <body>
+<header>
   <nav>
-  <p>
+  <p id="menus">
     <a href="index.php?menu=admins">Administrateurs</a>
     <a href="index.php?menu=domains">Domaines</a>
     <a href="index.php?menu=users">Utilisateurs</a>
@@ -71,5 +77,9 @@ switch($menu){
     <a href="index.php?unconnect=1">Se déconnecter</a>
     </p>
   </nav>
+</header>
+  <section>
+    <?php echo $content; ?>
+  </section>
 </body>
 </html>

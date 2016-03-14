@@ -5,13 +5,8 @@ function login_page(){
 }
 function connect($user,$password){
   GLOBAL $db;
-  
-  $query=preg_replace(
-	    array('/\\\\P/','/\\\\L/'),
-	    array($db -> qstr($password),$db -> qstr($user)),
-	    QUERY_AUTHENTIFICATE_ADMIN
-	  );
-  $results= $db -> Execute($query);
+
+  $results= $db -> Execute("SELECT username FROM admin WHERE password=MD5(".$db -> qstr($password).") AND username=".$db -> qstr($user)." AND ACTIVE='1'");
   if(! $results -> fields[0]){
     unset($_SESSION['isConnected']);
    
